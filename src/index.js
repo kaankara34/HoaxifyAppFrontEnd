@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import "./bootstrap-override.scss";
 import reportWebVitals from "./reportWebVitals";
-import UserSignupPage from "./UserSignupPage";
+import UserSignupPage from "./pages/UserSignupPage";
 
 ReactDOM.render(
   <React.StrictMode>
