@@ -1,5 +1,6 @@
 import React from "react";
 import { signup } from "../api/apiCalls";
+import Input from "../components/input";
 class UserSignupPage extends React.Component {
   state = {
     username: null,
@@ -53,45 +54,31 @@ class UserSignupPage extends React.Component {
       <div className="container">
         <form>
           <h1 className="text-center">Sign Up</h1>
-          <div className="form-group">
-            <label>Username</label>
-            <input
-              className={username ? "form-control is-invalid" : "form-control"}
-              name="username"
-              onChange={this.onChange}
-            />
-            <div className="invalid-feedback">{username}</div>
-          </div>
-          <div className="form-group">
-            <label>Display Name</label>
-            <input
-              className={
-                displayName ? "form-control is-invalid" : "form-control"
-              }
-              name="displayName"
-              onChange={this.onChange}
-            />
-            <div className="invalid-feedback">{displayName}</div>
-          </div>
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              className={password ? "form-control is-invalid" : "form-control"}
-              name="password"
-              onChange={this.onChange}
-              type="password"
-            />
-            <div className="invalid-feedback">{password}</div>
-          </div>
-          <div className="form-group">
-            <label>Password Repeat</label>
-            <input
-              className="form-control"
-              name="passwordRepeat"
-              onChange={this.onChange}
-              type="password"
-            />
-          </div>
+          <Input
+            label="Username"
+            error={username}
+            name="username"
+            onChange={this.onChange}
+          ></Input>
+          <Input
+            label="Display Name"
+            error={displayName}
+            name="displayName"
+            onChange={this.onChange}
+          ></Input>
+          <Input
+            label="Password"
+            error={password}
+            name="password"
+            onChange={this.onChange}
+            type="password"
+          ></Input>
+          <Input
+            label="Password Repeat"
+            name="passwordRepeat"
+            onChange={this.onChange}
+            type="password"
+          ></Input>
           <div className="text-center">
             <button
               className="btn btn-primary"
